@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date and Factorial</title>
+    <style>
+        .container {
+            margin: 30px;
+        }
+        input[type="text"] {
+            width: 200px;
+            padding: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            margin-right: 5px;
+        }
+    </style>
+    <script>
+        function displayDate() {
+            const today = new Date();
+            document.getElementById("dateBox").value =
+                today.toLocaleDateString();
+        }
+        function calculateFactorial() {
+            const n = prompt("Enter a number to calculate its factorial:");
+
+            if (n === null || n === "" || isNaN(n) || n < 0) {
+                alert("Please enter a valid non-negative number.");
+                return;
+            }
+            let fact = 1;
+            for (let i = 1; i <= n; i++) {
+                fact *= i;
+            }
+            alert("The factorial of " + n + " is " + fact + ".");
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <button onclick="displayDate()">Display Date</button>
+
+        <input type="text" id="dateBox" readonly>
+
+        <button onclick="calculateFactorial()">Calculate Factorial</button>
+    </div>
+</body>
+</html>
